@@ -1,19 +1,20 @@
-import React from 'react';
-import { TabNavigator } from 'react-navigation';
+import React, { Component } from 'react';
+import { AppRegistry, Stylesheet, Text, View } from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 
 
-import Login from './app/component/Login/Login';
+import Login from '../app/component/Login/Login';
 import SignUp from './app/component/SignUp/SignUp';
 import UserProfile from './app/component/Profile/UserProfile';
 
 export const Tabs = TabNavigator({
     Login: {
-        name: Login,
+        screen: Login,
     },
     SignUp: {
-        name: SignUp,
+        screen: SignUp,
     },  
     UserProfile: {
-        name: UserProfile,
+        screen: UserProfile,
     },
 });

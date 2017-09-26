@@ -8,8 +8,7 @@ export default class Course extends Component {
     render() {
         return ( 
             <View key={this.props.keyval} style={styles.courses}>
-                <text style={styles.courseText}>{this.props.val.course}</text>
-
+                <Text style={styles.courseText}>{this.props.val.course}</Text>
             </View>
         );
     }
@@ -25,8 +24,7 @@ const styles = StyleSheet.create({
     },
     courseText: {
         paddingLeft: 20,
-        borderLeftWidth: 10,
-        borderLeftColor: '#E91E63'
+
     },
     courseDelete: {
         position: 'absolute',

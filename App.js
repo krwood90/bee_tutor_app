@@ -1,12 +1,13 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-import Login from './app/component/Login/Login';
+import { TabNavigator } from 'react-navigation';
+import CourseList from './app/component/CourseList/CourseList';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Login />
+        <CourseList />
       </View>
     );
   }

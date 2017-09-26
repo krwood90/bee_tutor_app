@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, KeyboardAvoidingView} from 'react-native';
+import { View, Text, StyleSheet, KeyboardAvoidingView} from 'react-native';
 import CourseListForm from './CourseListForm';
 import Course from './Course';
-import { Font } from 'expo';
 
 
 export default class CourseList extends Component {
@@ -21,7 +20,7 @@ export default class CourseList extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff9c4',
+        backgroundColor: 'white',
         flex: 1
     },
     formContainer: {

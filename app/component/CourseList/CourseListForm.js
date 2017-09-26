@@ -5,7 +5,7 @@ import Course from './Course';
 export default class CourseListForm extends Component {
 
     state = {
-        courseArray: [{'note': 'testcourse 1'}],
+        courseArray: [{'course': 'testcourse 1'}],
         courseText: '',
     }
 
@@ -26,19 +26,21 @@ export default class CourseListForm extends Component {
                 <ScrollView style={styles.scrollContainer}>
                     {courses}
                 </ScrollView>
-                <View style={styles.addCourseToList}>
-                    <TextInput styles={styles.textInput}
-                        onChangeText={(courseText) => this.setState({courseText})} value={this.state.courseText}
-                        underlineColorAndroid='transparent'
-                        placeholder="Add class Name"
-                        placeholderTextColor="rgba(0,0,0,0.4)"
-                        autoCapitalize="none"
-                        autoCorrect={true}
-                        style={styles.input}
-                        /> 
-                    <TouchableOpacity onPress={this.addCourse.bind(this)} style={styles.buttonContainer} >
-                        <Text style={styles.buttonText}>+ Add Class</Text> 
-                    </TouchableOpacity >
+                <View style={styles.footer}>
+                    <View style={styles.addCourseToList}>
+                        <TextInput styles={styles.textInput}
+                            onChangeText={(courseText) => this.setState({courseText})} value={this.state.courseText}
+                            underlineColorAndroid='transparent'
+                            placeholder="Add class"
+                            placeholderTextColor="rgba(0,0,0,0.4)"
+                            autoCapitalize="none"
+                            autoCorrect={true}
+                            style={styles.input}
+                            /> 
+                        <TouchableOpacity onPress={this.addCourse.bind(this)} style={styles.buttonContainer} >
+                            <Text style={styles.buttonText}>+ Add Class</Text> 
+                        </TouchableOpacity >
+                    </View>
                 </View>
             </View>
         );
@@ -46,7 +48,7 @@ export default class CourseListForm extends Component {
 
     addCourse() {
         if (this.state.courseText) {
-            this.state.courseArray.push({'note': this.state.courseText});
+            this.state.courseArray.push({'course': this.state.courseText});
             this.setState({courseArray: this.state.courseArray})
             this.setState({courseText: ''});
         }
@@ -91,6 +93,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'black',
         fontWeight: 'bold'
+    },
+    footer: {
+        position: 'absolute',
+        alignItems: 'center',
+        bottom: 0,
+        left: 0,
+        right: 0,
     }
 
 });
