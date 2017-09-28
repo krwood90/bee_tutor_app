@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
 import { Font } from 'expo';
 
-export default class Course extends Component {
+export default class MessageInput extends Component {
 
 
     render() {
         return ( 
-            <View key={this.props.keyval} style={styles.courses}>
-                <Text style={styles.courseText}>{this.props.val.course}</Text>
+            <View key={this.props.keyval} style={styles.messages}>
+                <Text style={styles.messageText}>{this.props.val.message}</Text>
 
                 <TouchableOpacity>
                     
@@ -19,18 +19,18 @@ export default class Course extends Component {
 }
 
 const styles = StyleSheet.create({
-    courses: {
+    messages: {
         position: 'relative',
         padding: 20,
         paddingRight: 100,
         borderBottomWidth: 2,
         borderBottomColor: '#ededed'
     },
-    courseText: {
+    messageText: {
         paddingLeft: 20,
 
     },
-    courseDelete: {
+    messageDelete: {
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         bottom: 10,
         right: 10,
     },
-    courseDeleteText: {
+    messageDeleteText: {
         color: 'white'
     }
 });

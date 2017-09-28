@@ -7,7 +7,12 @@ export default class CourseListForm extends Component {
     state = {
         courseArray: [{'course': 'testcourse 1'}],
         courseText: '',
+        classesAvailable:[
+            {title: physics}
+        ],
+        classesText: '',
     }
+    
 
     render() {
 
@@ -22,6 +27,10 @@ export default class CourseListForm extends Component {
                     />
                 <View style={styles.header}>
                     <Text style={styles.headerText}>Classes</Text>
+                    <TextInput style={styles.searchBar}
+                    underlineColorAndroid='transparent' placeholder='Search Class'
+                    onChangeText={ (text) => this.search(text) } value={this.state.text} 
+                    />
                 </View>
                 <ScrollView style={styles.scrollContainer}>
                     {courses}

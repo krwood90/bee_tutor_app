@@ -18,9 +18,9 @@ export default class SignUpFrom extends Component {
                     autoCorrect={false}
                     style={styles.input}
                     /> 
-                    <TextInput
+                <TextInput
                     underlineColorAndroid='transparent'
-                    placeholder="School email"
+                    placeholder="School Email"
                     placeholderTextColor="rgba(0,0,0,0.4)"
                     returnKeyType="next"
                     onSubmitEditing={() => this.passwordInput.focus()}
@@ -29,6 +29,16 @@ export default class SignUpFrom extends Component {
                     autoCorrect={false}
                     style={styles.input}
                     /> 
+                <TextInput
+                    underlineColorAndroid='transparent'
+                    placeholder="Major"
+                    placeholderTextColor="rgba(0,0,0,0.4)"
+                    returnKeyType="next"
+                    onSubmitEditing={() => this.passwordInput.focus()}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    style={styles.input}
+                    />   
                 <TextInput
                     underlineColorAndroid='transparent'
                     placeholder="Password"
