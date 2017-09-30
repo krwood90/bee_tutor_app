@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView} from 'react-native';
 import MessageForm from './MessageForm';
 import MessageInput from './MessageInput';
-import firebase from 'firebase'
 
 
 

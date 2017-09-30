@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native';
+import UserProfile from './app/component/Profile/UserProfile';
+import SignUp from './app/component/SignUp/SignUp';
+
 
 export default class LoginForm extends Component {
+    linker(comp){
+        this.props.navigator.push({
+            component: comp
+        })
+    }
     render() {
         return ( 
             <View style={styles.container}>
@@ -28,10 +36,10 @@ export default class LoginForm extends Component {
                     style={styles.input}
                     ref={(input) => this.passwordInput = input}
                     /> 
-                <TouchableOpacity style={styles.buttonContainer} >
+                <TouchableOpacity onPress={this.linker.bind(this, UserProfile)} style={styles.buttonContainer} >
                     <Text style={styles.buttonText}>Login</Text> 
                 </TouchableOpacity > 
-                <TouchableOpacity style={styles.buttonContainer} >
+                <TouchableOpacity onPress={this.linker.bind(this, SignUp)} style={styles.buttonContainer} >
                     <Text style={styles.buttonText}>Sign Up</Text> 
                 </TouchableOpacity >
             </View>

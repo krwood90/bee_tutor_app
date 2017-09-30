@@ -1,21 +1,62 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-import { TabNavigator } from 'react-navigation';
-import Payment from './app/component/Payment/Payment';
+import Navigation from 'react-native-navigation';
+import Login from './app/component/Login/Login';
+import registerScreens from './app/config/routes';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Payment />
-      </View>
-    );
-  }
+registerScreens(); 
+
+//*https://github.com/wix/react-native-navigation/tree/master/example*//
+const tabs = [{
+  label: 'Navigation',
+  screen: 'example.Types',
+  icon: require('../img/list.png'),
+  title: 'Navigation Types',
+}, {
+  label: 'Actions',
+  screen: 'example.Actions',
+  icon: require('../img/swap.png'),
+  title: 'Navigation Actions',
+}];
+
+if (Platform.OS === 'android') {
+  tabs.push({
+    label: 'Transitions',
+    screen: 'example.Transitions',
+    icon: require('../img/transform.png'),
+    title: 'Navigation Transitions',
+  });
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff9c4',
+// this will start our app
+Navigation.startTabBasedApp({
+  tabs,
+  animationType: Platform.OS === 'ios' ? 'slide-down' : 'fade',
+  tabsStyle: {
+    tabBarBackgroundColor: '#003a66',
+    tabBarButtonColor: '#ffffff',
+    tabBarSelectedButtonColor: '#ff505c',
+    tabFontFamily: 'BioRhyme-Bold',
   },
+  appStyle: {
+    tabBarBackgroundColor: '#003a66',
+    navBarButtonColor: '#ffffff',
+    tabBarButtonColor: '#ffffff',
+    navBarTextColor: '#ffffff',
+    tabBarSelectedButtonColor: '#ff505c',
+    navigationBarColor: '#003a66',
+    navBarBackgroundColor: '#003a66',
+    statusBarColor: '#002b4c',
+    tabFontFamily: 'BioRhyme-Bold',
+    container: {
+      flex: 1,
+      backgroundColor: '#fff9c4',
+    },
+  },
+  drawer: {
+    left: {
+      screen: 'example.Types.Drawer'
+    }
+  }
 });
+
