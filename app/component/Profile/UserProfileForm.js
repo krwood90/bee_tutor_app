@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, StatusBar } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
 
 export default class UserProfileForm extends Component {
     render() {
         return ( 
-            <View style={styles.container}>
+            <View style={styles.containerForm}>
                 <Text style={styles.reviewText}>Reviews alallslsdlaldalfasflasfljklajlkasjgldsajlfjlajjfdsajlafdd</Text>
                 <Text style={styles.reviewText}>Reviews AHFHAJBJNVJABIJBIATHIHPniojiavonkn</Text>
                 <Text style={styles.reviewText}>Reviewsafdafkasdkjfokojasioeu fijmiaueimuvmiumeviuviuimvdvfoj</Text>
@@ -21,7 +23,7 @@ export default class UserProfileForm extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    containerForm: {
         padding: 30
     },
     input: {

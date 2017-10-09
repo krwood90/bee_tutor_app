@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { AppRegistry, Stylesheet, Text, View } from 'react-native';
-import Navigation from 'react-native-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
+
+import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
+import UserProfile from '../pages/UserProfile';
+import CourseList from '../pages/CourseList';
+import Payment from '../pages/Payment';
+import Calander from '../pages/Calander';
 
 
-import Login from '../app/component/Login/Login';
-import SignUp from './app/component/SignUp/SignUp';
-import UserProfile from './app/component/Profile/UserProfile';
-import CourseList from './app/component/CourseList/CourseList';
-
-export function registerScreens() {
-    Navigation.registerComponent('bee-tutor.LoginScreen', () => Login);
-    Navigation.registerComponent('bee-tutor.SignUpScreen', () => SignUp);
-    Navigation.registerComponent('bee-tutor.UserProfileScreen', () => UserProfile);
-    Navigation.registerComponent('bee-tutor.CourseListScreen', () => CourseList);
-}
+export const LoginStack = StackNavigator({
+    UserProfile: {
+        screen: UserProfile,
+    },
+    Login: {
+        screen: Login,
+    },
+    SignUp: {
+        screen: SignUp,
+    },
+});

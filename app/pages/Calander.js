@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView} from 'react-native';
-import CalanderForm from './CalanderForm';
+import CalanderForm from './component/Calander/CalanderForm';
 
 
 

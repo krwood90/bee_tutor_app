@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView} from 'react-native';
-import MessageForm from './MessageForm';
-import MessageInput from './MessageInput';
+import MessageForm from './component/Message/MessageForm';
+import MessageInput from './component/Message/MessageInput';
 
 
 

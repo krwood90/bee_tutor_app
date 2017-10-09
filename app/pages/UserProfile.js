@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, KeyboardAvoidingView, ScrollView, TouchableOpacity} from 'react-native';
-import UserProfileForm from './UserProfileForm';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Image, 
+    ScrollView, 
+    TouchableOpacity,
+    StatusBar
+} from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 
-export default class UserProfile extends Component {
-
-
+class UserProfile extends Component {
+    static navigationOptions = {
+        title: 'Profile',
+      };
     render() {
+        const { navigate } = this.props.navigation;
         return ( 
-            <KeyboardAvoidingView behavior='padding' style={styles.container}>
+            <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.bannerName}>Name</Text>
                 </View>
@@ -34,13 +44,28 @@ export default class UserProfile extends Component {
                         <Text style={styles.titleDescription}>Desription, My name is alallalalalalal. and my major is aksksksksks</Text>
                     </View>
                     <View style={styles.scrollContainer}>
-                        <UserProfileForm />
+                        <View style={styles.containerForm}>
+                            <Text style={styles.reviewText}>Reviews alallslsdlaldalfasflasfljklajlkasjgldsajlfjlajjfdsajlafdd</Text>
+                            <Text style={styles.reviewText}>Reviews AHFHAJBJNVJABIJBIATHIHPniojiavonkn</Text>
+                            <Text style={styles.reviewText}>Reviewsafdafkasdkjfokojasioeu fijmiaueimuvmiumeviuviuimvdvfoj</Text>
+                            <Text style={styles.reviewText}>Reviewsadsfvaisouviomaoivokfdajfkmjvkjfaojvkdov</Text>
+                            <Text style={styles.reviewText}>Reviewssavjeivmijiomtvioj,dovkaokfd,s</Text>
+                            <Text style={styles.reviewText}>Reviewsafviufiosdamiojivmosdajijimvfejofe</Text>
+                            <Text style={styles.reviewText}>Reviewsavsufidmaovivfjdijiovjimvj</Text>
+                            <TouchableOpacity style={styles.buttonContainer}>
+                                <Text style={styles.buttonText}>SEE ALL REVIEWS</Text> 
+                            </TouchableOpacity >
+                        </View>
                     </View>
                 </ScrollView>  
-            </KeyboardAvoidingView>
+            </View>
         );
     }
 }
+
+export default SimpleApp = StackNavigator({
+    UserProfile: { screen: UserProfile },
+  });
 
 const styles = StyleSheet.create({
     container: {
@@ -146,4 +171,30 @@ const styles = StyleSheet.create({
         opacity: 0.3,
         flex: 1,
     },
+    containerForm: {
+        padding: 30
+    },
+    input: {
+        height: 40,
+        backgroundColor: 'rgba(255,255,255,0.6)',
+        marginBottom: 10,
+        color: '#AAA',
+        paddingHorizontal: 10,
+    },
+    buttonContainer: {
+        alignItems: 'center',
+        backgroundColor: 'rgba(255,255,255,0.6)',
+        paddingVertical: 15,
+        marginBottom: 10,
+    },
+    buttonText: {
+        textAlign: 'center',
+        color: '#fbc02d',
+        fontWeight: 'bold'
+    },
+    reviewText:{
+        paddingBottom: 10,
+        borderBottomColor: 'rgba(0,0,0,0.1)',
+        borderBottomWidth: 1,
+    }
 });

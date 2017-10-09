@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView} from 'react-native';
-import PaymentForm from './PaymentForm';
+import PaymentForm from '../component/Payment/PaymentForm';
 
 
 

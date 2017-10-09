@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
 
 export default class SignUpFrom extends Component {
     render() {
         return ( 
-            <View style={styles.container}>
+            <View style={styles.containerForm}>
                 <StatusBar 
                     barStyle="light-content" 
                     />
@@ -65,8 +67,9 @@ export default class SignUpFrom extends Component {
     }
 }
 
+
 const styles = StyleSheet.create({
-    container: {
+    containerForm: {
         padding: 30
     },
     input: {
