@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import PaymentForm from '../component/Payment/PaymentForm';
 
 
 
 export default class Payment extends Component {
-
+    static navigationOptions = {
+        title: 'Payment',
+      };
 
     render() {
+        const { navigate } = this.props.navigation;
         return ( 
             <KeyboardAvoidingView behavior='padding' style={styles.container}>
                 <View style={styles.header}>

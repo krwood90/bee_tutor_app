@@ -8,16 +8,48 @@ import UserProfile from '../pages/UserProfile';
 import CourseList from '../pages/CourseList';
 import Payment from '../pages/Payment';
 import Calander from '../pages/Calander';
+import Message from '../pages/Message';
 
 
-export const LoginStack = StackNavigator({
+export const TabsBeeTutor = TabNavigator({
     UserProfile: {
         screen: UserProfile,
+        navigationOPtions: {
+            tabBar: {
+                label: 'Profile',
+            }
+        }
     },
-    Login: {
-        screen: Login,
+    CourseList: {
+        screen: CourseList,
+        navigationOPtions: {
+            tabBar: {
+                label: 'Courses',
+            }
+        }
     },
-    SignUp: {
-        screen: SignUp,
+    Payment: {
+        screen: Payment,
+        navigationOPtions: {
+            tabBar: {
+                label: 'Payment',
+            }
+        }
+    },
+    Calander: {
+        screen: Calander,
+        navigationOPtions: {
+            tabBar: {
+                label: 'Calander',
+            }
+        }
+    },
+    Message: {
+        screen: Message,
+        navigationOPtions: {
+            tabBar: {
+                label: 'Messages',
+            }
+        }
     },
 });

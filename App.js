@@ -2,20 +2,23 @@ import React from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Login from './app/pages/Login';
+import SignUp from './app/pages/SignUp';
+import UserProfile from './app/pages/UserProfile';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Login />
-      </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff9c4',
+const BeeTutorApp = StackNavigator({
+  Login: {
+    screen: Login,
   },
+  SignUp: {
+    screen: SignUp,
+  },
+  UserProfile: {
+    screen: UserProfile,
+  }
+},{
+    initialRouteName: 'Login',
 });
+
+
+export default BeeTutorApp

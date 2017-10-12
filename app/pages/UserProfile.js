@@ -9,6 +9,7 @@ import {
     StatusBar
 } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
+import { TabsBeeTutor } from '../config/routes';
 
 class UserProfile extends Component {
     static navigationOptions = {
@@ -57,7 +58,8 @@ class UserProfile extends Component {
                             </TouchableOpacity >
                         </View>
                     </View>
-                </ScrollView>  
+                </ScrollView> 
+                <TabsBeeTutor /> 
             </View>
         );
     }

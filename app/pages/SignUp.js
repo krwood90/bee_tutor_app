@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Font } from 'expo';
+import UserProfile from './UserProfile';
 
 
 class SignUp extends Component {
@@ -79,7 +80,7 @@ class SignUp extends Component {
                             style={styles.input}
                             ref={(input) => this.passwordInput = input}
                             /> 
-                        <TouchableOpacity style={styles.buttonContainer} >
+                        <TouchableOpacity onPress={() => navigate('UserProfile')} style={styles.buttonContainer} >
                             <Text style={styles.buttonText}>Sign Up</Text> 
                         </TouchableOpacity >
                     </View>
