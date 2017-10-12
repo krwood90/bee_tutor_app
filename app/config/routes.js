@@ -28,14 +28,6 @@ export const TabsBeeTutor = TabNavigator({
             }
         }
     },
-    Payment: {
-        screen: Payment,
-        navigationOPtions: {
-            tabBar: {
-                label: 'Payment',
-            }
-        }
-    },
     Calander: {
         screen: Calander,
         navigationOPtions: {
@@ -49,6 +41,14 @@ export const TabsBeeTutor = TabNavigator({
         navigationOPtions: {
             tabBar: {
                 label: 'Messages',
+            }
+        }
+    },
+    Payment: {
+        screen: Payment,
+        navigationOPtions: {
+            tabBar: {
+                label: 'Payment',
             }
         }
     },
