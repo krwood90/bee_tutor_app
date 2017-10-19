@@ -18,6 +18,20 @@ class SignUp extends Component {
     static navigationOptions = {
         title: 'Sign Up',
       };
+    constructor() {
+        this.state = {
+            name: "",
+            email: "",
+            major: "",
+            password: "",
+            password_confirmation: "",
+            errors: [],
+        }
+    }
+    
+    onRegisterPressed() {
+
+    }
 
     render() {
         const { navigate } = this.props.navigation;
@@ -32,6 +46,7 @@ class SignUp extends Component {
                             barStyle="light-content" 
                             />
                         <TextInput
+                            onChangeText={(val) => this.setState({name: val})}
                             underlineColorAndroid='transparent'
                             placeholder="Name"
                             placeholderTextColor="rgba(0,0,0,0.4)"
@@ -42,6 +57,7 @@ class SignUp extends Component {
                             style={styles.input}
                             /> 
                         <TextInput
+                            onChangeText={(val) => this.setState({email: val})}
                             underlineColorAndroid='transparent'
                             placeholder="School Email"
                             placeholderTextColor="rgba(0,0,0,0.4)"
@@ -53,6 +69,7 @@ class SignUp extends Component {
                             style={styles.input}
                             /> 
                         <TextInput
+                            onChangeText={(val) => this.setState({major: val})}
                             underlineColorAndroid='transparent'
                             placeholder="Major"
                             placeholderTextColor="rgba(0,0,0,0.4)"
@@ -63,6 +80,7 @@ class SignUp extends Component {
                             style={styles.input}
                             />   
                         <TextInput
+                            onChangeText={(val) => this.setState({password: val})}
                             underlineColorAndroid='transparent'
                             placeholder="Password"
                             placeholderTextColor="rgba(0,0,0,0.4)"
@@ -72,6 +90,7 @@ class SignUp extends Component {
                             ref={(input) => this.passwordInput = input}
                             /> 
                         <TextInput
+                            onChangeText={(val) => this.setState({password_confirmation: val})}
                             underlineColorAndroid='transparent'
                             placeholder="Confirm Password"
                             placeholderTextColor="rgba(0,0,0,0.4)"
@@ -80,7 +99,7 @@ class SignUp extends Component {
                             style={styles.input}
                             ref={(input) => this.passwordInput = input}
                             /> 
-                        <TouchableOpacity onPress={() => navigate('UserProfile')} style={styles.buttonContainer} >
+                        <TouchableOpacity onPress={() => navigate('UserProfile')} onPress={this.onRegisterPressed.bind(this)} style={styles.buttonContainer} >
                             <Text style={styles.buttonText}>Sign Up</Text> 
                         </TouchableOpacity >
                     </View>
